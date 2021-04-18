@@ -1,0 +1,19 @@
+{# INDEX #}
+
+<h1>Contact</h1>
+
+<form method="POST">
+	{{ form.hidden_tag() }}
+
+	{{ form.firstname.label }} {{ form.firstname }}
+	{{ form.lastname.label }} {{ form.lastname }}
+	<br>
+	{{ form.email.label }} {{ form.email }}
+	<br>
+	{{ form.lead_type.label }} {{ form.lead_type }}
+	<br>
+	{{ form.message.label }} {{ form.message }}
+
+	<br>
+	{{ form.submit() }}
+</form>

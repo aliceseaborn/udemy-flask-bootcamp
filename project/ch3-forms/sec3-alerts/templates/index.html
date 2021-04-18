@@ -1,0 +1,33 @@
+{# INDEX #}
+
+{% extends "base.html" %}
+{% block content %}
+
+<h1>Contact</h1>
+
+{% for mess in get_flashed_messages() %}
+	<div class="alert alert-warning alert-dismissible fade show" role="alert">
+	  <strong>Thank you</strong> {{ mess }}
+	  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+	    <span aria-hidden="true">&times;</span>
+	  </button>
+	</div>
+{% endfor %}
+
+<form method="POST">
+	{{ form.hidden_tag() }}
+
+	{{ form.firstname.label }} {{ form.firstname }}
+	{{ form.lastname.label }} {{ form.lastname }}
+	<br>
+	{{ form.email.label }} {{ form.email }}
+	<br>
+	{{ form.lead_type.label }} {{ form.lead_type }}
+	<br>
+	{{ form.message.label }} {{ form.message }}
+
+	<br>
+	{{ form.submit() }}
+</form>
+
+{% endblock %}
