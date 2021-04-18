@@ -1,1 +1,13 @@
-# ...
+# Pycache files
+*/*/*/*/__pycache__
+*/*/*/__pycache__
+*/*/__pycache__
+*/__pycache__
+__pycache__
+
+# Migrations
+*/*/*/*/migrations
+*/*/*/migrations
+*/*/migrations
+*/migrations
+migrations
