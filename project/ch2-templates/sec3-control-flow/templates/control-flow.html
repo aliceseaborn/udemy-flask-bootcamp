@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+
+<html lang="en" dir="ltr">
+
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+
+	<body>
+		<h1>Welcome {{username | capitalize}}.</h1>
+		<p>We haven't seen you since {{metadata['last-login']}}.</p>
+
+		<h4>Recent activity:</h4>
+		<ul>
+			{% for item in metadata['activity'] %}
+				{% if item['type'] == "blog" %}
+					<li>Blogged <i>{{ item['content'][0:30] }}...</i> in an entry titled "<i>{{item['title']}}</i>"" on {{item['date']}}.</li>
+				{% else %}
+					<li>Posted "<i>{{item['title']}}</i>"" on {{item['date']}}.</li>
+				{% endif %}
+			{% endfor %}
+		</ul>
+	</body>
+
+</html>
